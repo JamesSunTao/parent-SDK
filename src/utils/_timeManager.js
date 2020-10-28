@@ -1,4 +1,4 @@
-export default function timeManager() {
+function timeManager() {
   // 时间管理器
 }
 
@@ -45,8 +45,8 @@ timeManager.prototype.dateTimeFormat = function(timeStamp, formatStringParam) {
 }
 
 timeManager.prototype.isToday = function(displayTime, serverCurrentTime) {
-  let serverDate = this.dateTimeFormat(serverCurrentTime, 'yyyy-MM-dd')
-  let displayDate = this.dateTimeFormat(displayTime, 'yyyy-MM-dd')
+  let serverDate = timeManager.prototype.dateTimeFormat(serverCurrentTime, 'yyyy-MM-dd')
+  let displayDate = timeManager.prototype.dateTimeFormat(displayTime, 'yyyy-MM-dd')
   return serverDate === displayDate
 }
 
@@ -159,3 +159,4 @@ timeManager.prototype.dateBeijing = function(timeStamp) {
   beijing += (new Date(beijing).getTimezoneOffset() - d.getTimezoneOffset()) * 60 * 1000  // 冬夏令时切换当天, eg: d 为夏令时，beijing 为冬令时，需要处理多算的一个小时,具体百度夏令时怎么算
   return beijing
 }
+export default new timeManager()

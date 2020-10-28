@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "NODE_ENV=watch rollup -c ./build/rollup.config.common.js --watch",
     "dev": "NODE_ENV=development rollup -c ./build/rollup.config.js",
-    "build": "NODE_ENV=production rollup -c ./build/rollup.config.js"
+    "build": "NODE_ENV=production rollup -c ./build/rollup.config.js",
+    "publish": "npm publish  --registry=http://registry.vnpm.vipkid.com.cn"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",

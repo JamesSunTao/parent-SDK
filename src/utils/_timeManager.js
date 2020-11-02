@@ -45,8 +45,8 @@ timeManager.prototype.dateTimeFormat = function(timeStamp, formatStringParam) {
 }
 
 timeManager.prototype.isToday = function(displayTime, serverCurrentTime) {
-  let serverDate = timeManager.prototype.dateTimeFormat(serverCurrentTime, 'yyyy-MM-dd')
-  let displayDate = timeManager.prototype.dateTimeFormat(displayTime, 'yyyy-MM-dd')
+  let serverDate = this.dateTimeFormat(serverCurrentTime, 'yyyy-MM-dd')
+  let displayDate = this.dateTimeFormat(displayTime, 'yyyy-MM-dd')
   return serverDate === displayDate
 }
 

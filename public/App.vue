@@ -17,7 +17,6 @@
 import jsdk from '../lib/jsdk'
 import appVersion from './components/appVersion.vue';
 import timeManager from './components/timeManager.vue'
-import vkTrack from 'vk-track'
 export default {
     name:'App',
     data () {
@@ -33,9 +32,6 @@ export default {
       timeManager
     },
     mounted () {
-      debugger
-        vkTrack.trigger('Parent_class_UA_source_trigger')
-
         console.log(this.timeManager)
         // add(1,5)
         jsdk.add(1,2)

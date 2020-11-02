@@ -1,4 +1,3 @@
-import add from './add'
 import appVersion from './utils/_app_version'
 import timeManager from './utils/_timeManager'
 import address from './utils/_cities'
@@ -9,7 +8,6 @@ import {momentUTC} from './utils/_datetimeUTC'
 // import scrollFixedPlugin from './utils/_scrollFixed'
 
 export default {
-  add,
   appVersion,
   timeManager,
   address,

@@ -1,13 +1,12 @@
 {
   "name": "@parent/parent-jsdk",
-  "version": "1.0.4",
+  "version": "1.2.2",
   "description": "家长端js工具库",
   "main": "./lib/jsdk.min.js",
   "scripts": {
     "watch": "NODE_ENV=watch rollup -c ./build/rollup.config.common.js --watch",
     "dev": "NODE_ENV=development rollup -c ./build/rollup.config.js",
-    "build": "NODE_ENV=production rollup -c ./build/rollup.config.js",
-    "publish": "npm publish  --registry=http://registry.vnpm.vipkid.com.cn"
+    "build": "NODE_ENV=production rollup -c ./build/rollup.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
@@ -29,7 +28,7 @@
   "dependencies": {
     "cookies-js": "1.2.3",
     "rollup-plugin-alias": "^2.2.0",
-    "vk-hybrid": "http://registry.vnpm.vipkid.com.cn/vk-hybrid/download/vk-hybrid-3.0.9.tgz",
+    "vk-hybrid": "http://registry.vnpm.vipkid.com.cn/vk-hybrid/download/vk-hybrid-3.0.25.tgz",
     "vk-track": "http://registry.vnpm.vipkid.com.cn/vk-track/download/vk-track-2.4.4.tgz",
     "vue": "^2.6.10"
   },

@@ -5,6 +5,5 @@
 .eslintignore
 .gitignore
 example
-/src
 /dist
 /public

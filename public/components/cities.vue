@@ -17,7 +17,7 @@ export default {
         return {
           name: 'cities',
           initdata:{
-            cities:cities[0].,
+            cities:cities[0],
           }
         }
     },

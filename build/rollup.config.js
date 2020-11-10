@@ -4,6 +4,7 @@ import babel from 'rollup-plugin-babel'
 import { eslint } from 'rollup-plugin-eslint'
 import replace from 'rollup-plugin-replace'
 import { uglify } from 'rollup-plugin-uglify'
+import json from 'rollup-plugin-json'
 
 const packages = require('../package.json')
 const ENV = process.env.NODE_ENV
@@ -32,8 +33,13 @@ export default {
         name: 'jsdk'
     },
     plugins: [
-        resolve(),
+        resolve({
+            browser: true,
+            preferBuiltins: true,
+            mainFields: ['browser']
+        }),
         commonjs(),
+        json(),
         eslint({
             include: ['src/**'],
             exclude: ['node_modules/**']
@@ -50,5 +56,5 @@ export default {
         (ENV === 'production' && uglify()),
     ],
     // 指出应将哪些模块视为外部模块
-    external: ['cookies-js']
+    // external: ['cookies-js','@parent/jarvis','query-string','vk-hybrid']
 }

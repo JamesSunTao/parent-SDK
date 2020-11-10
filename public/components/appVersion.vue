@@ -1,13 +1,7 @@
 <template>
-  <section>
-     <h4>版本相关：appVersion</h4>
-     <ul>
-       <li v-for= "(key, value, index) in initdata" :key='`${name,index}`'>
-         {{value}}: <i>{{key}}</i>
-       </li>
-     </ul>
-  </section>
+  <pub :name="`版本相关：${name}`" :initdata="initdata"/>
 </template>
+
 <script>
 /**
  *  isAndroid: isAndroid,
@@ -23,12 +17,13 @@
  *  appVersionCompareLessThan: appVersionCompareLessThan 
  **/ 
 import jsdk from '../../lib/jsdk.js'
+import pub from './_pub.vue'
 const {isAndroid, isIOS, isFastApp, isApp, is20app, isWechat, isBaiduSmartProgram,vn, appVersionCompare, appVersionCompareLessThan} = jsdk.appVersion
 export default {
    data () {
         return {
           name: 'appVersion',
-          initdata:{
+          initdata: {
             isAndroid,
             isIOS,
             isFastApp,
@@ -42,6 +37,7 @@ export default {
           }
         }
     },
+    components: {pub}
 }
 </script>
 

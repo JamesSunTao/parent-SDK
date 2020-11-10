@@ -1,6 +1,6 @@
 {
   "name": "@parent/parent-jsdk",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "description": "家长端js工具库",
   "main": "./lib/jsdk.min.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "rollup-plugin-bundle-html": "^0.2.2",
     "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-replace": "^2.2.0",
@@ -26,8 +27,12 @@
     "vue-template-compiler": "^2.6.12"
   },
   "dependencies": {
+    "@parent/jarvis": "http://registry.vnpm.vipkid.com.cn/@parent/jarvis/download/@parent/jarvis-0.9.13.tgz",
+    "axios": "0.18.0",
     "cookies-js": "1.2.3",
+    "query-string": "5.1.1",
     "rollup-plugin-alias": "^2.2.0",
+    "form-urlencoded": "1.4.1",
     "vk-hybrid": "http://registry.vnpm.vipkid.com.cn/vk-hybrid/download/vk-hybrid-3.0.25.tgz",
     "vk-track": "http://registry.vnpm.vipkid.com.cn/vk-track/download/vk-track-2.4.4.tgz",
     "vue": "^2.6.10"

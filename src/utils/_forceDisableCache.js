@@ -1,5 +1,5 @@
 
-import appVersion from '@common/utils/_app_version.js'
+import appVersion from './_app_version.js'
 export default function(cb) {
   let workerOk = true
   if (appVersion.isApp && appVersion.isIOS) {

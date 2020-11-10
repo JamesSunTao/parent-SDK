@@ -1,21 +1,16 @@
 <template>
-  <section>
-     <h4>时间，时区处理：timeManager</h4>
-     <ul>
-       <li v-for= "(key, value, index) in initdata" :key='`${name,index}`'>
-         {{value}}: <i>{{key}}</i>
-       </li>
-     </ul>
-  </section>
+  <pub :name="`时间，时区相关：${name}`" :initdata="initdata"/>
 </template>
+
 <script>
 import jsdk from '../../lib/jsdk.js'
+import pub from './_pub.vue'
 const timeManager = jsdk.timeManager
 
 export default {
    data () {
         return {
-          name: 'appVersion',
+          name: 'timeManager',
           initdata:{
             isTimezoneBJ:timeManager.isTimezoneBJ(),
             dateGMT: timeManager.dateGMT(1603873051000),
@@ -26,6 +21,7 @@ export default {
           }
         }
     },
+    components: {pub}
 }
 </script>
 

@@ -4,7 +4,7 @@ import jarvis from '@parent/jarvis'
 import appVersion from './_app_version.js'
 import queryString from 'query-string'
 import {ParentBridge} from 'vk-hybrid'
-require('../lib/gt.js')
+import '../lib/gt'
 
 axios.interceptors.request.use(function(config) {
   let cookie_auth = jarvis.authorization.get('mobile').Authorization

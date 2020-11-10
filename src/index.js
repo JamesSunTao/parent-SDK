@@ -1,17 +1,47 @@
+/**
+ * APP版本相关
+ * */
 import appVersion from './utils/_app_version'
+/**
+ * 时间及时区处理 
+ **/
 import timeManager from './utils/_timeManager'
+/**
+ * 地址信息相关
+ * */
 import address from './utils/_cities'
 import newAddress from './utils/_citiesNew'
-import client from './utils/_client.js'
-// import dataSet from './utils/_dataSet' /**great 项目中未使用**/
+
 import {momentUTC} from './utils/_datetimeUTC'
 // import scrollFixedPlugin from './utils/_scrollFixed'
+/**
+ * 复制到剪切板
+ * */
+import xeClipboard from './utils/_clipboard.js'
+
+/**
+ * axios请求封装
+ * */ 
+import axios from './utils/_vkaxios'
+
+/**
+ * 强制刷新
+ * */
+import forceDisableCache from './utils/_forceDisableCache.js'
+
+/**
+ * 域名替换
+ **/
+import hosts from './utils/_hosts.js'
 
 export default {
   appVersion,
   timeManager,
   address,
   newAddress,
-  client,
-  momentUTC
+  momentUTC,
+  xeClipboard,
+  forceDisableCache,
+  hosts,
+  axios
 }

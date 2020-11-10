@@ -4,6 +4,7 @@ import serve from 'rollup-plugin-serve'
 import html from 'rollup-plugin-bundle-html'
 import babel from 'rollup-plugin-babel'
 import vuePlugin from 'rollup-plugin-vue'
+import json from 'rollup-plugin-json'
 import livereload from 'rollup-plugin-livereload'
 
 export default {
@@ -16,6 +17,7 @@ export default {
     plugins: [
         resolve(),
         commonjs(),
+        json(),
         vuePlugin(),
         html({
             template: 'public/index.html',

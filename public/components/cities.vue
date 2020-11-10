@@ -1,15 +1,9 @@
 <template>
-  <section>
-     <h4>地址数据：cities</h4>
-     <ul>
-       <li v-for= "(key, value, index) in initdata" :key='`${name,index}`'>
-         {{value}}: <i>{{key}}</i>
-       </li>
-     </ul>
-  </section>
+  <pub :name="`地址数据：${name}`" :initdata="initdata"/>
 </template>
 <script>
 import jsdk from '../../lib/jsdk.js'
+import pub from './_pub.vue'
 const cities = jsdk.cities
 
 export default {
@@ -21,6 +15,7 @@ export default {
           }
         }
     },
+    components: {pub}
 }
 </script>
 

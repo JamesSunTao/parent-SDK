@@ -1,15 +1,17 @@
 <template>
     <div class="main-warp">
-       <h3 class="tit">JSDK 工具库1</h3>
+       <h3 class="tit">JSDK 工具库</h3>
        <!-- app版本相关 -->
        <appVersion/>
        <!-- 时间，时区处理 -->
        <timeManager/>
+
        <ul>
            <li>newAddress (newAddress: <i>{{newAddress[0].name}}</i>)</li>
        </ul>
-       <!-- <p @click="jsdkAdd()">jsdk-add</p>
-       {{num}} -->
+       <!--  点击触发  -->
+       <clipboard/>
+       <forceDisableCache/>
     </div>
 </template>
 
@@ -17,6 +19,8 @@
 import jsdk from '../lib/jsdk'
 import appVersion from './components/appVersion.vue';
 import timeManager from './components/timeManager.vue'
+import clipboard from './components/clipboard.vue';
+import forceDisableCache from './components/forceDisableCache.vue'
 import vktrack from 'vk-track'
 export default {
     name:'App',
@@ -30,7 +34,9 @@ export default {
     },
     components:{
       appVersion,
-      timeManager
+      timeManager,
+      clipboard,
+      forceDisableCache
     },
     mounted () {
       vktrack.toolDebug = true
@@ -38,11 +44,8 @@ export default {
         app_id: '0638377803f80262',
         show_log: vktrack.toolDebug
       })
-          vktrack.pageView('Parent_msg_student_msg_page_view')
-
-        console.log(this.timeManager)
-        // add(1,5)
-        jsdk.add(1,2)
+      vktrack.pageView('suntao_msg_student_msg_page_view')
+      console.log(jsdk.axios)
     },
     methods: {
       jsdkAdd(){

@@ -34,6 +34,16 @@ import forceDisableCache from './utils/_forceDisableCache.js'
  **/
 import hosts from './utils/_hosts.js'
 
+/**
+ * vktrack 打点工具
+ * */
+import vkTrack from './utils/_vktrack.js'
+
+/**
+ * 接入微信服务
+ **/
+import wxservice from './utils/_wxservice.js'
+
 export default {
   appVersion,
   timeManager,
@@ -43,5 +53,7 @@ export default {
   xeClipboard,
   forceDisableCache,
   hosts,
-  axios
+  axios,
+  vkTrack,
+  wxservice
 }

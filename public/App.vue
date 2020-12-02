@@ -8,20 +8,25 @@
 
        <ul>
            <li>newAddress (newAddress: <i>{{newAddress[0].name}}</i>)</li>
+           <li>axios : <i>axios请求封装</i></li>
        </ul>
        <!--  点击触发  -->
        <clipboard/>
+       <!-- 强制刷新 -->
        <forceDisableCache/>
+       <!-- 神策打点 -->
+       <vkTrack/>
     </div>
 </template>
 
 <script>
 import jsdk from '../lib/jsdk'
-import appVersion from './components/appVersion.vue';
+import appVersion from './components/appVersion.vue'
 import timeManager from './components/timeManager.vue'
-import clipboard from './components/clipboard.vue';
+import clipboard from './components/clipboard.vue'
 import forceDisableCache from './components/forceDisableCache.vue'
-import vktrack from 'vk-track'
+import vkTrack from './components/vkTrack.vue'
+// import vktrack from 'vk-track'
 export default {
     name:'App',
     data () {
@@ -36,16 +41,12 @@ export default {
       appVersion,
       timeManager,
       clipboard,
-      forceDisableCache
+      forceDisableCache,
+      vkTrack
     },
     mounted () {
-      vktrack.toolDebug = true
-      vktrack.init({
-        app_id: '0638377803f80262',
-        show_log: vktrack.toolDebug
-      })
-      vktrack.pageView('suntao_msg_student_msg_page_view')
-      console.log(jsdk.axios)
+      debugger
+      console.log('wxservise:'+jsdk.wxservice)
     },
     methods: {
       jsdkAdd(){

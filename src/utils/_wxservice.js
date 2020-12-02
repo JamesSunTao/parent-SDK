@@ -1,5 +1,5 @@
 import axios from 'axios'
-require('../lib/jweixin-1.3.2.js')
+import '../lib/jweixin-1.3.2.js'
 function isInWechat() {
   var ua = navigator.userAgent
   return /MicroMessenger/i.test(ua)

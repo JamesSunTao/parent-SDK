@@ -1,39 +1,30 @@
 import appVersion from './_app_version.js'
-import vktrack from '../lib/vk-track.js'
-const BRIDGE_API_VERSION = '2.7.0' // 开始支持track打点的app版本
+import vktrack from 'vk-track'
+import jarvis from '@parent/jarvis'
 import { ParentBridge } from 'vk-hybrid'
+const BRIDGE_API_VERSION = '2.7.0' // 开始支持track打点的app版本
 const versionCheck = appVersion.appVersionCompare(BRIDGE_API_VERSION)
 const cookies = require('cookies-js')
-const CONFIG = require('../../../vf2e.config.js')
 const isFastApp = appVersion.isFastApp
 function isFromApp() {
   return cookies.get('isFromApp') === '1'
 }
-vktrack.toolDebug = window.location.protocol !== 'https:'
+vktrack.toolDebug = true
 vktrack.init({
-  server_url: CONFIG.sensors,
+  app_id: '0638377803f80262',
   show_log: vktrack.toolDebug
 })
 vktrack.register({
-  business: 'parent_h5',
+  business: 'great',
   product: isFastApp ? 'parent-fast' : 'parent',
-  parent_id: cookies.get('mbparentid') || '',
-  student_id: cookies.get('mbstudentid') || '',
+  parent_id: jarvis.authorization.get('mobile').parentId,
+  student_id: jarvis.authorization.get('mobile').studentId,
   vk_session_id: cookies.get('vk_session_id') || ''
 })
-if (isFromApp()) {
-  if (versionCheck) {
-    ParentBridge.trackPageview({
-      pageName: window.location,
-      event: 'enter',
-      params: ''
-    })
-  }
-}
 
 function click(clickId, obj) {
   vktrack.click(clickId, obj)
-  let logValue = {'click_id': clickId}
+  let logValue = { click_id: clickId }
   if (obj) {
     logValue = Object.assign(logValue, obj)
   }
@@ -41,7 +32,7 @@ function click(clickId, obj) {
     if (versionCheck) {
       ParentBridge.trackClick({
         clickId: clickId,
-        params: logValue
+        params: logValue,
       })
     }
   }
@@ -49,7 +40,7 @@ function click(clickId, obj) {
 
 function trigger(triggerId, obj) {
   vktrack.trigger(triggerId, obj)
-  let logValue = {'trigger_id': triggerId}
+  let logValue = { trigger_id: triggerId }
   if (obj) {
     logValue = Object.assign(logValue, obj)
   }
@@ -57,7 +48,7 @@ function trigger(triggerId, obj) {
     if (versionCheck) {
       ParentBridge.trackTrigger({
         triggerId: triggerId,
-        params: logValue
+        params: logValue,
       })
     }
   }
@@ -72,7 +63,7 @@ function appClick(clickId, obj) {
     if (versionCheck) {
       ParentBridge.trackClick({
         clickId: clickId,
-        params: logValue
+        params: logValue,
       })
     }
   }
@@ -87,32 +78,35 @@ function appTrigger(triggerId, obj) {
     if (versionCheck) {
       ParentBridge.trackTrigger({
         triggerId: triggerId,
-        params: logValue
+        params: logValue,
       })
     }
   }
 }
 
-function debug(debugId, obj) {
-  vktrack.debug(debugId, obj)
-  let logValue = {'debug_id': debugId}
+function pageView(pageViewId, obj) {
+  vktrack.pageView(pageViewId, obj)
+  let logValue = { pageViewId: pageViewId }
   if (obj) {
     logValue = Object.assign(logValue, obj)
   }
   if (isFromApp()) {
     if (versionCheck) {
-      ParentBridge.trackClick({
-        clickId: debugId,
+      ParentBridge.trackPageview({
+        pageName: window.location,
+        event: 'enter',
         params: logValue
       })
     }
   }
 }
 
+pageView('parent_h5_narada_pageview')
+
 export default {
   click: click,
   trigger: trigger,
-  debug: debug,
+  pageView: pageView,
   appClick: appClick,
   appTrigger: appTrigger,
 }

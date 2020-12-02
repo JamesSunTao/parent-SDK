@@ -34,6 +34,38 @@ import forceDisableCache from './utils/_forceDisableCache.js'
  **/
 import hosts from './utils/_hosts.js'
 
+/**
+ * vktrack 打点工具
+ * */
+import vkTrack from './utils/_vktrack.js'
+
+/**
+ * 接入微信服务
+ **/
+import wxservice from './utils/_wxservice.js'
+
+/**
+ * 增加配置化请求接口
+ **/
+import getConfig from './utils/_configRequest.js'
+
+/**
+ * 正则匹配
+ */
+import * as vkReg from './utils/_reg.js'
+
+/**
+ * 地址跳转
+ */
+// import * as vkLocation from './utils/_jump_location.js' 
+
+import NetStorage from './utils/_netstorage.js'
+
+/**
+ * html font-size适配
+ **/
+import vkRem from './utils/_rem.js'
+
 export default {
   appVersion,
   timeManager,
@@ -43,5 +75,11 @@ export default {
   xeClipboard,
   forceDisableCache,
   hosts,
-  axios
+  axios,
+  vkTrack,
+  wxservice,
+  getConfig,
+  vkReg,
+  NetStorage,
+  vkRem
 }

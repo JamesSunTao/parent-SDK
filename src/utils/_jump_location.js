@@ -1,4 +1,4 @@
-import pathMap from '../../../path.js'
+import pathMap from './path.js'
 import appVersion from './_app_version.js'
 import queryString from 'query-string'
 import vkTrack from './_vktrack2.js'

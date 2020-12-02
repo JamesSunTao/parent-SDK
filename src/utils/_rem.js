@@ -1,5 +1,8 @@
-(function(doc, win) {
-  var docEl = doc.documentElement,
+function vkRem() {
+  // 时间管理器
+}
+vkRem.prototype.setRem = function () {
+  var docEl = document.documentElement,
     resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
     recalc = function() {
       var clientWidth = docEl.clientWidth
@@ -15,8 +18,10 @@
         docEl.style.fontSize = parseInt((fsize * fsize) / realF) + 'px'
       }
     }
-  if (!doc.addEventListener) return
-  win.addEventListener(resizeEvt, recalc, false)
-  doc.addEventListener('DOMContentLoaded', recalc, false)
+  if (!document.addEventListener) return
+  window.addEventListener(resizeEvt, recalc, false)
+  document.addEventListener('DOMContentLoaded', recalc, false)
   recalc()
-})(document, window)
+}
+
+export default new vkRem()

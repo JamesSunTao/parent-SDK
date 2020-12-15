@@ -31,10 +31,10 @@ export default {
     name:'App',
     data () {
         return {
-            activeIndex2: '1',
-            num: 0,
-            isApp: jsdk.appVersion.isApp,
-            newAddress: jsdk.newAddress.data
+          activeIndex2: '1',
+          num: 0,
+          isApp: jsdk.appVersion.isApp,
+          newAddress: jsdk.newAddress.data
         }
     },
     components:{
@@ -46,12 +46,13 @@ export default {
     },
     mounted () {
       debugger
-      console.log('wxservise:'+jsdk.wxservice)
+      // console.log(jsdk.vkRem.setRem())
+      
     },
     methods: {
       jsdkAdd(){
-          console.log('add jsdk')
-          this.num = jsdk.add(1,2)
+        console.log('add jsdk')
+        this.num = jsdk.add(1,2)
       }
     }
 }

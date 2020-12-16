@@ -46,7 +46,8 @@ export default {
     },
     mounted () {
       debugger
-      // console.log(jsdk.vkRem.setRem())
+      // jsdk.vkLocation.jumpLocation('https://www.baidu.com/')
+      // console.log(jsdk.vkLocation.jumpLocation('https://www.baidu.com/'))
       
     },
     methods: {

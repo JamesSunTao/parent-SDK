@@ -57,7 +57,7 @@ import * as vkReg from './utils/_reg.js'
 /**
  * 地址跳转
  */
-import * as vkLocation from './utils/_jump_location.js' 
+// import * as vkLocation from './utils/_jump_location.js' 
 
 import NetStorage from './utils/_netstorage.js'
 
@@ -80,7 +80,6 @@ export default {
   wxservice,
   getConfig,
   vkReg,
-  vkLocation,
   NetStorage,
   vkRem
 }

@@ -63,8 +63,71 @@ appVersion版本相关
     nhw: 'https://' + hostname.replace(hostprefix, 'nhw.'),
     edu: 'https://' + hostname.replace(hostprefix, 'edu.'),
     activity: 'https://' + hostname.replace(hostprefix, 'activity.'),
-```    
+```
 
+### axios
+请求封装
+```
+  import {axios} form '@parent/parent-jsdk'
+```
+
+### vkTrack
+神策打点
+```
+  import {vkTrack} form '@parent/parent-jsdk'
+  vkTrack.click('parent_app_lightcourse_openclass_ct_click', {content_title: '点击去定级'})
+  vkTrack.trigger('parent_app_lightcourse_openclass_ct_click', {content_title: '点击去定级'})
+  vkTrack.pageView()
+  vkTrack.appClick()
+   vkTrack.appTrigger()
+  默认调用pageview打点
+```
+
+### wxservice
+微信服务
+```
+  import {wxservice} form '@parent/parent-jsdk'
+   wxservice.wxready().then(function() {
+      window.wx.hideAllNonBaseMenuItem()
+    })
+```
+
+### getConfig
+配置平台接口请求封装
+```
+  import {getConfig} form '@parent/parent-jsdk'
+  getConfig({code: 'online_retailers_sku_config'}).then(res => {
+    this.loading = false
+    if (res && res.length > 0) {
+      this.label.labelText = res[0].label[0].labelText
+      if (res[0].cards.length > 0) {
+        this.videoList = res[0].cards
+        this.time = res[0].cards[0].minutes * 1
+      } else {
+        this.pageState = 0
+      }
+    } else {
+      this.pageState = 0
+    }
+  })
+```
+
+### vkReg
+正则匹配
+```
+  import {vkReg} form '@parent/parent-jsdk'
+  vkReg.isEmail('1303920513@qq.com')
+  isMobile
+  isSMSCode
+  isImageCode
+  isPassword
+  isBirthday
+  isChinesename
+  isEnglishname
+  isEmail
+  isTelPhone
+  isIdCard
+```
 
 ### vkRem
 设置根结点font-size

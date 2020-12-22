@@ -45,9 +45,9 @@ export default {
       vkTrack
     },
     mounted () {
-      debugger
-      // jsdk.vkLocation.jumpLocation('https://www.baidu.com/')
-      // console.log(jsdk.vkLocation.jumpLocation('https://www.baidu.com/'))
+      let netStorage = jsdk.NetStorage
+      netStorage.setItem('vkAttr2', 1111213123)
+      console.log(netStorage.getItem('vkAttr'))
       
     },
     methods: {

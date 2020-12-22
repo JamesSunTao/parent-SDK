@@ -5,7 +5,7 @@
  * 网络存储，存储一些会话内容
  *
  */
-export default class NetStorage {
+class NetStorage {
   constructor() {
     try {
       this.storage = window.localStorage
@@ -45,3 +45,4 @@ export default class NetStorage {
     this.storage.clear()
   }
 }
+export default new NetStorage()

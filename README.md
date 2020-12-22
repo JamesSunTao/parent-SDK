@@ -135,3 +135,11 @@ appVersion版本相关
   import {vkRem} form '@parent/parent-jsdk'
   vkRem.setRem()
 ```
+
+### NetStorage
+设置 local Storage
+```
+  import {NetStorage} form '@parent/parent-jsdk'
+  NetStorage.setItem('key',value)
+  NetStorage.getItem('key')
+```

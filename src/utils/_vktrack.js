@@ -101,7 +101,7 @@ function pageView(pageViewId, obj) {
   }
 }
 
-pageView('parent_h5_narada_pageview')
+pageView('parent_h5_pageview')
 
 export default {
   click: click,

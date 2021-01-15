@@ -5,6 +5,22 @@ function isInWechat() {
   return /MicroMessenger/i.test(ua)
 }
 
+/**
+ * 判断是否处于小程序环境中
+ */
+function isInMiniprogram() {
+  console.log('wx:',window.wx)
+  var ua = navigator.userAgent
+  if (/MicroMessenger/i.test(ua)) {
+    window.wx.miniProgram.getEnv((res) => {
+      if (res.miniprogram) {
+        return true
+      }
+    })
+  }
+  return false
+}
+
 function wxready() {
 
   var jsApiList = [
@@ -71,5 +87,6 @@ function wxready() {
 
 export default {
   isInWechat,
-  wxready
+  wxready,
+  isInMiniprogram
 }

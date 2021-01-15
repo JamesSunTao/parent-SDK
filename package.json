@@ -1,6 +1,6 @@
 {
   "name": "@parent/parent-jsdk",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "家长端js工具库",
   "main": "./lib/jsdk.min.js",
   "scripts": {
@@ -28,11 +28,12 @@
   },
   "dependencies": {
     "@parent/jarvis": "http://registry.vnpm.vipkid.com.cn/@parent/jarvis/download/@parent/jarvis-0.9.13.tgz",
+    "@rollup/plugin-alias": "^3.1.1",
     "axios": "0.18.0",
     "cookies-js": "1.2.3",
+    "form-urlencoded": "1.4.1",
     "query-string": "5.1.1",
     "rollup-plugin-alias": "^2.2.0",
-    "form-urlencoded": "1.4.1",
     "vk-hybrid": "http://registry.vnpm.vipkid.com.cn/vk-hybrid/download/vk-hybrid-3.0.25.tgz",
     "vk-track": "http://registry.vnpm.vipkid.com.cn/vk-track/download/vk-track-2.4.4.tgz",
     "vue": "^2.6.10"

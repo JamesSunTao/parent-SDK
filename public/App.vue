@@ -45,9 +45,11 @@ export default {
       vkTrack
     },
     mounted () {
-      let netStorage = jsdk.NetStorage
-      netStorage.setItem('vkAttr2', 1111213123)
-      console.log(netStorage.getItem('vkAttr'))
+      // let netStorage = jsdk.wxservice.wxready()
+      let iswxMi = jsdk.wxservice.isInMiniprogram()
+      // netStorage.setItem('vkAttr2', 1111213123)
+      // console.log(netStorage)
+      console.log(iswxMi)
       
     },
     methods: {

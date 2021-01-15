@@ -66,6 +66,11 @@ import NetStorage from './utils/_netstorage.js'
  **/
 import vkRem from './utils/_rem.js'
 
+/**
+ * 文件格式转换，图片异步加载
+ **/
+import utilsProcessor from './utils/_utils_processor.js'
+
 export default {
   appVersion,
   timeManager,
@@ -81,5 +86,6 @@ export default {
   getConfig,
   vkReg,
   NetStorage,
-  vkRem
+  vkRem,
+  utilsProcessor
 }

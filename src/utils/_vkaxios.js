@@ -136,6 +136,11 @@ axios.interceptors.response.use( response => {
     })
   } else {
     error.name = 'NetError'
+    // 调用前端错误监控sdk api
+    const VK_WATCH_NETWORK_REPORT = window.VK_WATCH_NETWORK_REPORT
+    if (VK_WATCH_NETWORK_REPORT) {
+      window.VK_WATCH_NETWORK_REPORT(error)
+    }
     return Promise.reject(error)
   }
 })

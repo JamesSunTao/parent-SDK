@@ -1,7 +1,7 @@
 ### appVersion
 appVersion版本相关
 ```
-  import {appVersion} form '@parent/parent-jsdk'
+  import {appVersion} from '@parent/parent-jsdk'
   appVersion.isApp()
   appVersion.isAndroid()
   appVersion.isWechat()
@@ -14,10 +14,10 @@ appVersion版本相关
 ### timeManager
 时区处理及时间格式转换
 ```
-  import {timeManager} form '@parent/parent-jsdk'
+  import {timeManager} fro mm '@parent/parent-jsdk'
   timeManager.isTimezoneBJ()
   timeManager.dateGMT(1603873051000)
-  timeManager.dateTimeFormat(1603873051000,'yyyy-MM-dd hh:mm')
+  timeManager.dateTimefrommat(1603873051000,'yyyy-MM-dd hh:mm')
   timeManager.isToday(1603873051000,1603873051000)
   timeManager.isTomorrow(1603873051000,1603873051000)
   timeManager.dateBeijing(1603873051000)
@@ -25,18 +25,18 @@ appVersion版本相关
 ### newAddress
 地区json数据
 ```
-  import {newAddress} form '@parent/parent-jsdk'
+  import {newAddress} from '@parent/parent-jsdk'
 ```
 ### address
 老版本地区json数据，great项目中有项目使用
 ```
-  import {address} form '@parent/parent-jsdk'
+  import {address} from '@parent/parent-jsdk'
 ```  
 
 ### forceDisableCache
 强制刷新，解决ios不刷新问题
 ```
-  import {forceDisableCache} form '@parent/parent-jsdk'
+  import {forceDisableCache} from '@parent/parent-jsdk'
   setTimeout(() => {
     forceDisableCache(function() {
       location.reload()
@@ -47,14 +47,14 @@ appVersion版本相关
 ### xeClipboard
 复制到剪切板
 ```
-  import {xeClipboard} form '@parent/parent-jsdk'
+  import {xeClipboard} from '@parent/parent-jsdk'
   xeClipboard.copy('我是复制内容')
 ```
 
 ### hosts
 域名解析拼接
 ```
-  import {hosts} form '@parent/parent-jsdk'
+  import {hosts} from '@parent/parent-jsdk'
   hosts.mobile, hosts.nhw, hosts.activity
     www: 'https://' + hostname.replace(hostprefix, 'www.'),
     mobile: 'https://' + hostname.replace(hostprefix, 'mobile.'),
@@ -68,13 +68,13 @@ appVersion版本相关
 ### axios
 请求封装
 ```
-  import {axios} form '@parent/parent-jsdk'
+  import {axios} from '@parent/parent-jsdk'
 ```
 
 ### vkTrack
 神策打点
 ```
-  import {vkTrack} form '@parent/parent-jsdk'
+  import {vkTrack} from '@parent/parent-jsdk'
   vkTrack.click('parent_app_lightcourse_openclass_ct_click', {content_title: '点击去定级'})
   vkTrack.trigger('parent_app_lightcourse_openclass_ct_click', {content_title: '点击去定级'})
   vkTrack.pageView()
@@ -86,7 +86,7 @@ appVersion版本相关
 ### wxservice
 微信服务
 ```
-  import {wxservice} form '@parent/parent-jsdk'
+  import {wxservice} from '@parent/parent-jsdk'
    wxservice.wxready().then(function() {
       window.wx.hideAllNonBaseMenuItem()
     })
@@ -95,7 +95,7 @@ appVersion版本相关
 ### getConfig
 配置平台接口请求封装
 ```
-  import {getConfig} form '@parent/parent-jsdk'
+  import {getConfig} from '@parent/parent-jsdk'
   getConfig({code: 'online_retailers_sku_config'}).then(res => {
     this.loading = false
     if (res && res.length > 0) {
@@ -115,7 +115,7 @@ appVersion版本相关
 ### vkReg
 正则匹配
 ```
-  import {vkReg} form '@parent/parent-jsdk'
+  import {vkReg} from '@parent/parent-jsdk'
   vkReg.isEmail('1303920513@qq.com')
   isMobile
   isSMSCode
@@ -132,14 +132,28 @@ appVersion版本相关
 ### vkRem
 设置根结点font-size
 ```
-  import {vkRem} form '@parent/parent-jsdk'
+  import {vkRem} from '@parent/parent-jsdk'
   vkRem.setRem()
 ```
 
 ### NetStorage
 设置 local Storage
 ```
-  import {NetStorage} form '@parent/parent-jsdk'
+  import {NetStorage} from '@parent/parent-jsdk'
   NetStorage.setItem('key',value)
   NetStorage.getItem('key')
+```
+
+### utilsProcessor
+文件格式转换，图片异步加载
+```
+  import {utilsProcessor} from '@parent/parent-jsdk'
+  utilsProcessor.dataURLToBlob(this.base64)
+  {
+    asyncGetCamreaPhotoRotate,
+    asyncLoadImage,
+    dataURLToBlob,
+    compress,
+    caniuse
+  }
 ```

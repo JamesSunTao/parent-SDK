@@ -80,7 +80,20 @@ function getAppVersion() {
   }
   return vn
 }
+// 当前的运行环境是否处于DinoTvApp
+function isDinoTvAPPWebview() {
+  if (isApp) {
+    return /aeversion/i.test(navigator.userAgent)
+  }
+  return false
+}
 
+function isParentAPPWebview() {
+  if (isApp) {
+    return /parent/i.test(navigator.userAgent)
+  }
+  return false
+}
 // 当前版本号是否大于等于指定版本
 function appVersionCompare(version) {
   if (isApp) {
@@ -109,5 +122,7 @@ export default {
   getAppVersion: getAppVersion,
   vn: getCurrentAppVersion(),
   appVersionCompare: appVersionCompare,
-  appVersionCompareLessThan: appVersionCompareLessThan
+  appVersionCompareLessThan: appVersionCompareLessThan,
+  isDinoTvAPPWebview: isDinoTvAPPWebview,
+  isParentAPPWebview: isParentAPPWebview
 }

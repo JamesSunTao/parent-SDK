@@ -1,6 +1,6 @@
 {
   "name": "@parent/parent-jsdk",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "家长端js工具库",
   "main": "./lib/jsdk.min.js",
   "scripts": {
